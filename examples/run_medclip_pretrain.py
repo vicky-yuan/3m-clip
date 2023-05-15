@@ -27,8 +27,8 @@ os.environ['PYTHONASHSEED'] = str(seed)
 os.environ['TOKENIZERS_PARALLELISM']='false'
 
 # set cuda devices
-os.environ['CUDA_VISIBLE_DEVICES']='0'
-device = "cuda:0" if torch.cuda.is_available() else "cpu"
+os.environ['CUDA_VISIBLE_DEVICES']='0,2'
+device = "cuda:0,2" if torch.cuda.is_available() else "cpu"
 
 # set training configurations
 train_config = {

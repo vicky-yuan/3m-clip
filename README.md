@@ -48,7 +48,7 @@ Import Environment
 conda env create -f environment.yml
 ```
 
-Main installation package
+Or Only import main installation package
 ```bash
 python 3.8   cuda 10.2
 pip install -r requirements.txt
