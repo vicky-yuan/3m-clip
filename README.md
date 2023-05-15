@@ -26,7 +26,7 @@ pip install -r requirements.txt
 ```
 
 ```bash
-git clone https://github.com/vicky-yuan/3M-CLIP.git
+git clone https://gitee.com/qiyuanli/3m-clip.git
 ```
 
 
