@@ -1,40 +1,40 @@
 # 3M-CLIP
-Multilingual Multimodal Pre-training Model for Medical.
+Decoupled Contrastive Learning for Multilingual Multimodal Medical Pre-trained Model.
 
-## Tips
-Path Details
+Qiyuan Li, Chen Qiu, Haijiang Liu, Jinguang Gu, Dan Luo
+
+Multilingual multimodal pre-training in healthcare faces challenges related to language diversity, suboptimal multi-modal interactions, and an absence of coherent multilingual multimodal representations. In response to these challenges, we introduce a novel multilingual multimodal medical pre-training model. 
+We employ a strategic augmentation of the medical corpus by expanding the MIMIC-CXR report dataset to 20 distinct languages using machine translation techniques. 
+We develop a targeted label disambiguation technique to address the labeling noise within decoupled contrastive learning.
+We present a refined multilingual multimodal medical pre-training model, significantly enhancing the understanding of medical multimodal data and adapting the model to multilingual medical contexts.
+
+
+## Datasets
+1. Download the MIMIC-CXR
 ```bash
-MMMCLIP-main
-    --CheXpert-v1.0-small
-        --train
-          --patientxxx
-    --examples
-    --example_data
-    --local_data
-        --chexpert-5x200-val-meta.csv
-        --...
-    --medclip
-        --pretained
-          --medclip-resnet
-            --pytorch_model.bin
-          --medclip-vit
-            --pytorch_model.bin
-    --mimic-cxr-jpg
-        --2.0.0
-            --files
-                --p10
+https://physionet.org/content/mimic-cxr/2.1.0/
 ```
-
-## Download Datasets
-1.download the mimic-cxr-jpg
-```bash
-https://physionet.org/files/mimic-cxr-jpg/2.0.0/
-
-```
-2.download the chexpert（11G）
+2. Download the CheXpert（11G）
 ```bash
 https://stanfordmlgroup.github.io/competitions/chexpert/
 ```
+3. Translate the multilingual reports
+```bash
+https://huggingface.co/facebook/nllb-200-distilled-600M
+```
+
+## Vision and Text Encoder
+1. Vision encoder -- clip-vit-base-patch32
+```bash
+https://huggingface.co/openai/clip-vit-base-patch32
+```
+2. Text encoder -- xlm-roberta
+```bash
+https://github.com/facebookresearch/XLM
+```
+3. Med-XLM-Roberta
+
+We obtain a medical multilingual text encoder based on XLM-R, trained with translated data.
 
 ## Download 3M-CLIP
 
@@ -53,11 +53,10 @@ pip install -r requirements.txt
 git clone https://github.com/vicky-yuan/3m-clip.git
 ```
 
-
 ## Run
-pre-training
-
 ```bash
 cd examples
 nohup python -u run_medclip_pretrain.py > nohup.out 2>&1 &
 ```
+
+
