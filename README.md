@@ -3,10 +3,7 @@ Decoupled Contrastive Learning for Multilingual Multimodal Medical Pre-trained M
 
 Qiyuan Li, Chen Qiu, Haijiang Liu, Jinguang Gu, Dan Luo
 
-Multilingual multimodal pre-training in healthcare faces challenges related to language diversity, suboptimal multi-modal interactions, and an absence of coherent multilingual multimodal representations. In response to these challenges, we introduce a novel multilingual multimodal medical pre-training model. 
-We employ a strategic augmentation of the medical corpus by expanding the MIMIC-CXR report dataset to 20 distinct languages using machine translation techniques. 
-We develop a targeted label disambiguation technique to address the labeling noise within decoupled contrastive learning.
-We present a refined multilingual multimodal medical pre-training model, significantly enhancing the understanding of medical multimodal data and adapting the model to multilingual medical contexts.
+Multilingual multimodal pre-training aims to facilitate the integration of conceptual representations across diverse languages and modalities within a shared, high-dimensional semantic space. This endeavor in healthcare faces challenges related to language diversity, suboptimal multimodal interactions, and an absence of coherent multilingual multimodal representations. In response to these challenges, we introduce a novel multilingual multimodal medical pre-training model. Initially, we employ a strategic augmentation of the medical corpus by expanding the MIMIC-CXR report dataset to 20 distinct languages using machine translation techniques. Subsequently, we develop a targeted label disambiguation technique to address the labeling noise within decoupled contrastive learning. In particular, it categorizes and refines uncertain phrases within the clinical reports based on disease type, promoting finer-grained semantic similarity and improving inter-modality interactions. Building on these proposals, we present a refined multilingual multimodal medical pre-trained model, significantly enhancing the understanding of medical multimodal data and adapting the model to multilingual medical contexts. Experiments reveal that our model outperforms other baselines in medical image classification and multilingual medical image-text retrieval.
 
 
 ## Datasets
@@ -58,5 +55,9 @@ git clone https://github.com/vicky-yuan/3m-clip.git
 cd examples
 nohup python -u run_medclip_pretrain.py > nohup.out 2>&1 &
 ```
+## Checkpoints
+
+We provide pre-trained checkpoints of 3M-CLIP in the /checkpoints folder. 
+
 
 
